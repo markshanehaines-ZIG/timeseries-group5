@@ -2,7 +2,7 @@
 
 **Module 5 · Unit 1 — AI in Project Optimisation, Innovation and Ethics**
 **Zigurat Institute of Technology — MAICEN 1125**
-**Submitted: 9 March 2026**
+**Submitted: 15 March 2026**
 
 End-to-end time series analysis of the PJM West hourly electricity consumption dataset using Python. The notebook covers data cleaning, multi-scale visualisation, seasonality analysis, autocorrelation (ACF/PACF), forecasting with Prophet, and an advanced SARIMA model as a bonus exercise.
 
