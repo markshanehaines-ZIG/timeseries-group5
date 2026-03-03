@@ -1,4 +1,5 @@
 # Time Series Analysis — Group 5
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/markshanehaines-ZIG/timeseries-group5/blob/main/notebooks/MAICEN_1125_M5_U1_Group_5_Assignment.ipynb)
 
 **Module 5 · Unit 1 — AI in Project Optimisation, Innovation and Ethics**
 **Zigurat Institute of Technology — MAICEN 1125**
