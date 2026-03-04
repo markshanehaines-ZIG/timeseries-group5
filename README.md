@@ -132,11 +132,11 @@ Each team member works on their assigned exercise(s):
 
 | Member | M5 U1 Role | M4 U4 Role (PPE Detection) |
 |--------|-----------|---------------------------|
-| Osama Ata | Data Cleaning & Preprocessing (Ex. 1) | Governance & Presentation Lead |
-| Marc Azzam | Visualisation & Seasonality (Ex. 2 & 3) | Error Analysis & Evidence Lead |
+| Osama Ata | Data Cleaning and Preprocessing (Ex. 1) | Governance and Presentation Lead |
+| Marc Azzam | Visualisation and Seasonality (Ex. 2 & 3) | Error Analysis and Evidence Lead |
 | Malak Yaseen | ACF/PACF Statistical Analysis (Ex. 4) | Model Training Lead |
-| Letícia Cristovam Clemente | Prophet Forecasting & Tuning (Ex. 5) | Dataset & Annotation Lead |
-| Mark Shane Haines | SARIMA Bonus (Ex. 6), Integration & Review | Project Lead |
+| Letícia Cristovam Clemente | Prophet Forecasting and Tuning (Ex. 5) | Dataset and Annotation Lead |
+| Mark Shane Haines | SARIMA Bonus (Ex. 6), Integration and Review | Project Lead |
 
 > **Rotation rationale:** Task allocation was deliberately rotated from M4 U4 so that each member gains experience across different stages of the data science pipeline.
 
