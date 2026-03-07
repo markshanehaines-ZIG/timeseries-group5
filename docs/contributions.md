@@ -21,6 +21,13 @@ For M5 U1, we deliberately rotated responsibilities from M4 U4 (PPE Detection) s
 - Hourly frequency enforcement and linear interpolation
 - Data quality summary and documentation
 - Extracted data cleaning logic into a standalone python pipeline `src/data_cleaning.py`
+- IQR-based outlier detection and replacement (e.g. 487 MW sensor error on 2003-05-29)
+- Input/output validation assertions (fail-fast on malformed data)
+- Gap audit reporting — logs exact missing timestamps and contiguous block counts
+- Cleaning summary export — pipeline returns a statistics dict for programmatic use
+- Structured logging via Python `logging` module (replaces raw `print` calls)
+- CLI interface (`--input`, `--output`, `--verbose`) via `argparse`
+- Unit test suite (`tests/test_data_cleaning.py`) — 15 tests covering all cleaning functions
 
 ### Marc Azzam — Exercises 2 & 3: Visualisation and Seasonality
 

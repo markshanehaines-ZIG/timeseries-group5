@@ -14,3 +14,8 @@ dependencies = [
     "seaborn>=0.13.2",
     "statsmodels>=0.14.6",
 ]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.2",
+]

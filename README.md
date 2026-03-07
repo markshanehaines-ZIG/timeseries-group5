@@ -67,7 +67,9 @@ Electricity grids must balance supply and demand in real time. Understanding con
 ├── notebooks/
 │   └── MAICEN_1125_M5_U1_Group_5_Assignment.ipynb      ← Main notebook (Colab-ready)
 ├── src/
-│   └── data_cleaning.py                                ← Data Cleaning standalone extraction
+│   └── data_cleaning.py                                ← Data Cleaning standalone pipeline
+├── tests/
+│   └── test_data_cleaning.py                           ← Unit tests for the cleaning pipeline
 ├── data/
 │   └── PJMW_hourly.csv                                ← Raw dataset (from Kaggle)
 ├── results/
@@ -94,15 +96,15 @@ Electricity grids must balance supply and demand in real time. Understanding con
    git clone https://github.com/markshanehaines-ZIG/timeseries-group5.git
    cd timeseries-group5
    ```
-2. Create a virtual environment (recommended):
+2. Create and activate a virtual environment:
    ```bash
-   python -m venv venv
-   source venv/bin/activate        # macOS / Linux
-   venv\Scripts\activate           # Windows
+   uv venv
+   source .venv/bin/activate        # macOS / Linux
+   .venv\Scripts\activate           # Windows
    ```
-3. Install dependencies:
+3. Install dependencies (from `pyproject.toml`):
    ```bash
-   pip install pandas numpy matplotlib seaborn statsmodels prophet scikit-learn
+   uv sync
    ```
 4. Open `notebooks/MAICEN_1125_M5_U1_Group_5_Assignment.ipynb` in VS Code with the Jupyter extension
 5. Run all cells sequentially
@@ -117,6 +119,9 @@ Each team member works on their assigned exercise(s):
    cd timeseries-group5
    git checkout -b feature/ex1-data-cleaning    # use your exercise name
    ```
+
+````
+
 2. Make your changes in the notebook
 3. Commit and push:
    ```bash
@@ -135,9 +140,16 @@ There is also an extracted codebase inside `src/`. If you want to use the pipeli
 
 ```bash
 uv run python src/data_cleaning.py
+uv run python src/data_cleaning.py --input data/PJMW_hourly.csv --output data/PJMW_hourly_cleaned.csv --verbose
 ```
 
-This performs the pre-processing checks outined in Exercise 1.
+This performs the pre-processing checks outlined in Exercise 1.
+
+### Option E: Running Tests
+
+```bash
+uv run python -m pytest tests/ -v
+```
 
 ---
 
@@ -202,3 +214,4 @@ This project is licensed under the **MIT License** — see `LICENSE` for details
 ---
 
 **Group 5** — Zigurat Institute of Technology, MAICEN 1125
+````
