@@ -66,6 +66,8 @@ Electricity grids must balance supply and demand in real time. Understanding con
 ├── LICENSE                                             ← MIT License
 ├── notebooks/
 │   └── MAICEN_1125_M5_U1_Group_5_Assignment.ipynb      ← Main notebook (Colab-ready)
+├── src/
+│   └── data_cleaning.py                                ← Data Cleaning standalone extraction
 ├── data/
 │   └── PJMW_hourly.csv                                ← Raw dataset (from Kaggle)
 ├── results/
@@ -126,6 +128,16 @@ Each team member works on their assigned exercise(s):
 
 > **Branch naming convention:** `feature/ex<number>-<short-description>`
 > e.g., `feature/ex5-prophet-forecasting`, `feature/ex6-sarima-bonus`
+
+### Option D: Standalone Scripts (uv + python)
+
+There is also an extracted codebase inside `src/`. If you want to use the pipeline logic independently of the Jupyter environments, simply run:
+
+```bash
+uv run python src/data_cleaning.py
+```
+
+This performs the pre-processing checks outined in Exercise 1.
 
 ---
 
