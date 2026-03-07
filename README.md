@@ -1,4 +1,5 @@
 # Time Series Analysis — Group 5
+
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/markshanehaines-ZIG/timeseries-group5/blob/main/notebooks/MAICEN_1125_M5_U1_Group_5_Assignment.ipynb)
 
 **Module 5 · Unit 1 — AI in Project Optimisation, Innovation and Ethics**
@@ -17,41 +18,41 @@ Electricity grids must balance supply and demand in real time. Understanding con
 
 ### Problem Framing
 
-| Component | Detail |
-|-----------|--------|
-| Dataset | PJM West hourly energy consumption (MW), 2002–2018 |
-| Records | ~143,000 hourly observations |
-| Patterns of Interest | Daily (24h), weekly (7d), annual (52w) seasonality |
-| Forecasting Models | Prophet (Meta), SARIMA (statsmodels) |
-| Evaluation Metrics | MAE, RMSE, MAPE on a 52-week holdout test set |
-| Key Principle | Models as decision-support tools, not replacements for judgement |
+| Component            | Detail                                                           |
+| -------------------- | ---------------------------------------------------------------- |
+| Dataset              | PJM West hourly energy consumption (MW), 2002–2018               |
+| Records              | ~143,000 hourly observations                                     |
+| Patterns of Interest | Daily (24h), weekly (7d), annual (52w) seasonality               |
+| Forecasting Models   | Prophet (Meta), SARIMA (statsmodels)                             |
+| Evaluation Metrics   | MAE, RMSE, MAPE on a 52-week holdout test set                    |
+| Key Principle        | Models as decision-support tools, not replacements for judgement |
 
 ---
 
 ## 2 · Dataset
 
-| Item | Detail |
-|------|--------|
-| Source | [PJM Hourly Energy Consumption — Kaggle](https://www.kaggle.com/datasets/robikscube/hourly-energy-consumption) |
-| File | `PJMW_hourly.csv` |
-| Columns | `Datetime`, `PJMW_MW` |
-| Raw rows | 143,206 |
-| Date range | 1 April 2002 – 3 August 2018 |
-| Cleaning issues | 8 duplicate rows (DST transitions), 30 missing hours |
-| Final cleaned | 143,232 hourly records (gap-free, linearly interpolated) |
+| Item            | Detail                                                                                                         |
+| --------------- | -------------------------------------------------------------------------------------------------------------- |
+| Source          | [PJM Hourly Energy Consumption — Kaggle](https://www.kaggle.com/datasets/robikscube/hourly-energy-consumption) |
+| File            | `PJMW_hourly.csv`                                                                                              |
+| Columns         | `Datetime`, `PJMW_MW`                                                                                          |
+| Raw rows        | 143,206                                                                                                        |
+| Date range      | 1 April 2002 – 3 August 2018                                                                                   |
+| Cleaning issues | 8 duplicate rows (DST transitions), 30 missing hours                                                           |
+| Final cleaned   | 143,232 hourly records (gap-free, linearly interpolated)                                                       |
 
 ---
 
 ## 3 · Assignment Exercises
 
-| Exercise | Topic | Points |
-|----------|-------|--------|
-| 1 | Data Cleaning & Preprocessing | 2 |
-| 2 | Multi-Scale Visualisation | 2 |
-| 3 | Seasonality Analysis (Daily + Weekly) | 2 |
-| 4 | ACF / PACF Statistical Analysis | 2 |
-| 5 | Forecasting with Prophet | 2 |
-| 6 | **BONUS:** Advanced Modelling — SARIMA | 2 |
+| Exercise | Topic                                  | Points |
+| -------- | -------------------------------------- | ------ |
+| 1        | Data Cleaning & Preprocessing          | 2      |
+| 2        | Multi-Scale Visualisation              | 2      |
+| 3        | Seasonality Analysis (Daily + Weekly)  | 2      |
+| 4        | ACF / PACF Statistical Analysis        | 2      |
+| 5        | Forecasting with Prophet               | 2      |
+| 6        | **BONUS:** Advanced Modelling — SARIMA | 2      |
 
 > Grading: 5 correct exercises = 10/10. The bonus exercise acts as a wildcard.
 
@@ -130,13 +131,13 @@ Each team member works on their assigned exercise(s):
 
 ## 6 · Team — Group 5
 
-| Member | M5 U1 Role | M4 U4 Role (PPE Detection) |
-|--------|-----------|---------------------------|
-| Osama Ata | Data Cleaning and Preprocessing (Ex. 1) | Governance and Presentation Lead |
-| Marc Azzam | Visualisation and Seasonality (Ex. 2 & 3) | Error Analysis and Evidence Lead |
-| Malak Yaseen | ACF/PACF Statistical Analysis (Ex. 4) | Model Training Lead |
-| Letícia Cristovam Clemente | Prophet Forecasting and Tuning (Ex. 5) | Dataset and Annotation Lead |
-| Mark Shane Haines | SARIMA Bonus (Ex. 6), Integration and Review | Project Lead |
+| Member                     | M5 U1 Role                                   | M4 U4 Role (PPE Detection)       |
+| -------------------------- | -------------------------------------------- | -------------------------------- |
+| Osama Ata                  | Data Cleaning and Preprocessing (Ex. 1)      | Governance and Presentation Lead |
+| Marc Azzam                 | Visualisation and Seasonality (Ex. 2 & 3)    | Error Analysis and Evidence Lead |
+| Malak Yaseen               | ACF/PACF Statistical Analysis (Ex. 4)        | Model Training Lead              |
+| Letícia Cristovam Clemente | Prophet Forecasting and Tuning (Ex. 5)       | Dataset and Annotation Lead      |
+| Mark Shane Haines          | SARIMA Bonus (Ex. 6), Integration and Review | Project Lead                     |
 
 > **Rotation rationale:** Task allocation was deliberately rotated from M4 U4 so that each member gains experience across different stages of the data science pipeline.
 
@@ -144,11 +145,11 @@ Each team member works on their assigned exercise(s):
 
 ## 7 · Key Results (Summary)
 
-| Model | MAE (MW) | RMSE (MW) | MAPE |
-|-------|----------|-----------|------|
-| Prophet (Default) | ~383 | ~523 | ~6.7% |
-| Prophet (Tuned, conservative trend) | ~371 | ~509 | ~6.5% |
-| SARIMA(1,1,1)(1,1,1,52) | ~370 | ~475 | ~6.5% |
+| Model                               | MAE (MW) | RMSE (MW) | MAPE  |
+| ----------------------------------- | -------- | --------- | ----- |
+| Prophet (Default)                   | ~383     | ~523      | ~6.7% |
+| Prophet (Tuned, conservative trend) | ~371     | ~509      | ~6.5% |
+| SARIMA(1,1,1)(1,1,1,52)             | ~370     | ~475      | ~6.5% |
 
 All models evaluated on a 52-week holdout test set (Aug 2017 – Aug 2018).
 
@@ -156,16 +157,16 @@ All models evaluated on a 52-week holdout test set (Aug 2017 – Aug 2018).
 
 ## 8 · Dependencies
 
-| Package | Version | Purpose |
-|---------|---------|---------|
-| Python | 3.10+ | Runtime |
-| pandas | 2.0+ | Data manipulation |
-| numpy | 1.24+ | Numerical operations |
-| matplotlib | 3.7+ | Plotting |
-| seaborn | 0.12+ | Plot styling |
-| statsmodels | 0.14+ | ACF/PACF, SARIMA, ADF test |
-| prophet | 1.1+ | Meta's forecasting library |
-| scikit-learn | 1.3+ | MAE / RMSE metrics |
+| Package      | Version | Purpose                    |
+| ------------ | ------- | -------------------------- |
+| Python       | 3.10+   | Runtime                    |
+| pandas       | 2.0+    | Data manipulation          |
+| numpy        | 1.24+   | Numerical operations       |
+| matplotlib   | 3.7+    | Plotting                   |
+| seaborn      | 0.12+   | Plot styling               |
+| statsmodels  | 0.14+   | ACF/PACF, SARIMA, ADF test |
+| prophet      | 1.1+    | Meta's forecasting library |
+| scikit-learn | 1.3+    | MAE / RMSE metrics         |
 
 ---
 
@@ -180,9 +181,9 @@ This project is licensed under the **MIT License** — see `LICENSE` for details
 ## 10 · References
 
 - PJM Interconnection LLC — [pjm.com](https://www.pjm.com/)
-- Taylor, S.J. & Letham, B. (2018). *Forecasting at Scale.* The American Statistician, 72(1), 37–45.
-- Hyndman, R.J. & Athanasopoulos, G. (2021). *Forecasting: Principles and Practice* (3rd ed.). OTexts.
-- Box, G.E.P., Jenkins, G.M. & Reinsel, G.C. (2015). *Time Series Analysis: Forecasting and Control* (5th ed.). Wiley.
+- Taylor, S.J. & Letham, B. (2018). _Forecasting at Scale._ The American Statistician, 72(1), 37–45.
+- Hyndman, R.J. & Athanasopoulos, G. (2021). _Forecasting: Principles and Practice_ (3rd ed.). OTexts.
+- Box, G.E.P., Jenkins, G.M. & Reinsel, G.C. (2015). _Time Series Analysis: Forecasting and Control_ (5th ed.). Wiley.
 - statsmodels — [statsmodels.org](https://www.statsmodels.org/)
 - Prophet — [facebook.github.io/prophet](https://facebook.github.io/prophet/)
 
