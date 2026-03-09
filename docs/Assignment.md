@@ -76,3 +76,7 @@ Perform an alternative forecast using ARIMA/SARIMA, LSTM or any other forecastin
     - **Output:** Show the code for the model setup, training, and a plot of the prediction against the actual values (or the future forecast).
 
 **Alternatively**, you may use Prophet. But in that case, you must apply it to a different dataset of your choice that is not related to energy consumption.
+
+## Test
+
+We are testing how to push things to Github.
