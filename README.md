@@ -66,10 +66,6 @@ Electricity grids must balance supply and demand in real time. Understanding con
 ├── LICENSE                                             ← MIT License
 ├── notebooks/
 │   └── MAICEN_1125_M5_U1_Group_5_Assignment.ipynb      ← Main notebook (Colab-ready)
-├── src/
-│   └── data_cleaning.py                                ← Data Cleaning standalone pipeline
-├── tests/
-│   └── test_data_cleaning.py                           ← Unit tests for the cleaning pipeline
 ├── data/
 │   └── PJMW_hourly.csv                                ← Raw dataset (from Kaggle)
 ├── results/
@@ -96,15 +92,15 @@ Electricity grids must balance supply and demand in real time. Understanding con
    git clone https://github.com/markshanehaines-ZIG/timeseries-group5.git
    cd timeseries-group5
    ```
-2. Create and activate a virtual environment:
+2. Create a virtual environment (recommended):
    ```bash
-   uv venv
-   source .venv/bin/activate        # macOS / Linux
-   .venv\Scripts\activate           # Windows
+   python -m venv venv
+   source venv/bin/activate        # macOS / Linux
+   venv\Scripts\activate           # Windows
    ```
-3. Install dependencies (from `pyproject.toml`):
+3. Install dependencies:
    ```bash
-   uv sync
+   pip install pandas numpy matplotlib seaborn statsmodels prophet scikit-learn
    ```
 4. Open `notebooks/MAICEN_1125_M5_U1_Group_5_Assignment.ipynb` in VS Code with the Jupyter extension
 5. Run all cells sequentially
@@ -119,9 +115,6 @@ Each team member works on their assigned exercise(s):
    cd timeseries-group5
    git checkout -b feature/ex1-data-cleaning    # use your exercise name
    ```
-
-````
-
 2. Make your changes in the notebook
 3. Commit and push:
    ```bash
@@ -134,34 +127,17 @@ Each team member works on their assigned exercise(s):
 > **Branch naming convention:** `feature/ex<number>-<short-description>`
 > e.g., `feature/ex5-prophet-forecasting`, `feature/ex6-sarima-bonus`
 
-### Option D: Standalone Scripts (uv + python)
-
-There is also an extracted codebase inside `src/`. If you want to use the pipeline logic independently of the Jupyter environments, simply run:
-
-```bash
-uv run python src/data_cleaning.py
-uv run python src/data_cleaning.py --input data/PJMW_hourly.csv --output data/PJMW_hourly_cleaned.csv --verbose
-```
-
-This performs the pre-processing checks outlined in Exercise 1.
-
-### Option E: Running Tests
-
-```bash
-uv run python -m pytest tests/ -v
-```
-
 ---
 
 ## 6 · Team — Group 5
 
-| Member                     | M5 U1 Role                                   | M4 U4 Role (PPE Detection)       |
-| -------------------------- | -------------------------------------------- | -------------------------------- |
-| Osama Ata                  | Data Cleaning and Preprocessing (Ex. 1)      | Governance and Presentation Lead |
-| Marc Azzam                 | Visualisation and Seasonality (Ex. 2 & 3)    | Error Analysis and Evidence Lead |
-| Malak Yaseen               | ACF/PACF Statistical Analysis (Ex. 4)        | Model Training Lead              |
-| Letícia Cristovam Clemente | Prophet Forecasting and Tuning (Ex. 5)       | Dataset and Annotation Lead      |
-| Mark Shane Haines          | SARIMA Bonus (Ex. 6), Integration and Review | Project Lead                     |
+| Member                     | M5 U1 Role                                 | M4 U4 Role (PPE Detection)     |
+| -------------------------- | ------------------------------------------ | ------------------------------ |
+| Osama Ata                  | Data Cleaning & Preprocessing (Ex. 1)      | Governance & Presentation Lead |
+| Marc Azzam                 | Visualisation & Seasonality (Ex. 2 & 3)    | Error Analysis & Evidence Lead |
+| Malak Yaseen               | ACF/PACF Statistical Analysis (Ex. 4)      | Model Training Lead            |
+| Letícia Cristovam Clemente | Prophet Forecasting & Tuning (Ex. 5)       | Dataset & Annotation Lead      |
+| Mark Shane Haines          | SARIMA Bonus (Ex. 6), Integration & Review | Project Lead                   |
 
 > **Rotation rationale:** Task allocation was deliberately rotated from M4 U4 so that each member gains experience across different stages of the data science pipeline.
 
@@ -214,4 +190,3 @@ This project is licensed under the **MIT License** — see `LICENSE` for details
 ---
 
 **Group 5** — Zigurat Institute of Technology, MAICEN 1125
-````

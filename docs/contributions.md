@@ -63,7 +63,3 @@ For M5 U1, we deliberately rotated responsibilities from M4 U4 (PPE Detection) s
 2. Each member worked on their assigned exercise(s) on feature branches
 3. Pull requests reviewed before merging into `main`
 4. Final integration and testing performed before submission
-
-## Test
-
-We are testing how to push things to Github.
